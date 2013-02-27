@@ -1,10 +1,11 @@
-define selinux( $state, $type ) {
+class selinux( $state, $type ) {
 
-        package { "$name":
+        package { "selinux":
                 name => $::operatingsystem ? {
                         "CentOS" => "selinux-policy",
                         "RedHat" => "selinux-policy",
                         "OracleLinux" => "selinux-policy",
+                        # Need to figure out the package name here on ubuntu
                 },
 
                 ensure => latest,
