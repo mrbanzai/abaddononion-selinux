@@ -4,6 +4,7 @@ class selinux( $state, $type ) {
                 name => $::operatingsystem ? {
                         "CentOS" => "selinux-policy",
                         "RedHat" => "selinux-policy",
+                        "Fedora" => "selinux-policy",
                         "OracleLinux" => "selinux-policy",
                         # Need to figure out the package name here on ubuntu
                 },
@@ -28,6 +29,7 @@ class selinux( $state, $type ) {
                 name => $::operatingsystem ? {
                         "CentOS" => "/etc/selinux/config",
                         "RedHat" => "/etc/selinux/config",
+                        "Fedora" => "/etc/selinux/config",
                         "OracleLinux" => "/etc/selinux/config",
                         "Ubuntu" => "/etc/selinux",
                 },
